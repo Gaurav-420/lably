@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.xfactor.lably.entity.Lab;
+import com.xfactor.lably.entity.Admin;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -84,5 +85,22 @@ public class TestController {
     // Employee newEmployee(@RequestBody Employee newEmployee) {
     // return repository.save(newEmployee);
     // }
+
+    @GetMapping("/register")
+    public Admin register(@RequestParam String name, @RequestParam String username, @RequestParam String password,
+            @RequestParam String department) {
+        // HashMap<String, String> resp = new HashMap<>();
+        // resp.put("name", name);
+        // resp.put("username", username);
+        // resp.put("password", password);
+        // resp.put("department", department);
+        // return resp;
+        Admin admin1 = new Admin();
+        admin1.setName(name);
+        admin1.setUsername(username);
+        admin1.setPassword(password);
+        admin1.setDepartment(department);
+        return admin1;
+    }
 
 }
