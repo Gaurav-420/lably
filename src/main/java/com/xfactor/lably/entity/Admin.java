@@ -1,20 +1,39 @@
 package com.xfactor.lably.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Column;
+import javax.persistence.Table;
+
+
+@Entity
+@Table(name = "tbl_admin")
 public class Admin {
 
-    private String Id;
+    @Id
+    @GeneratedValue
+    @Column(name = "id")
+    private long Id;
 
+    @Column(name = "name")
     private String name;
 
+    @Column(name = "username")
     private String username;
 
+    @Column(name = "password")
     private String password;
 
+    @Column(name = "department")
     private String department;
 
+    
+    public long getId() {
+        return Id;
+    }
 
-
-	public void setId(String Id) {
+	public void setId(long Id) {
 		this.Id = Id;
 	}
 
